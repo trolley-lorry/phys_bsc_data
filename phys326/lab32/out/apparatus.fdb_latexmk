@@ -1,0 +1,12 @@
+# Fdb version 4
+["pdflatex"] 1790807269.36905 "apparatus.tex" "out/apparatus.pdf" "apparatus" 1790807269.89509 2
+  "apparatus.tex" 1790807266 590 8315aac2c97dc10d0b6f15fc12c7a28b ""
+  "c:/texlive/2026/texmf-dist/web2c/texmf.cnf" 1774904413 43630 e9fa012910491fe5ae08a72c3c2997a7 ""
+  "c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1774908887 3636411 d7698c3efcf617d10bfa3abf6f84f9b1 ""
+  "c:/texlive/2026/texmf.cnf" 1774908795 713 e69b156964470283e0530f5060668171 ""
+  "out/apparatus.aux" 1790807261 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  (generated)
+  "out/apparatus.aux"
+  "out/apparatus.log"
+  "out/apparatus.pdf"
+  (rewritten before read)

@@ -1,0 +1,12 @@
+# Fdb version 4
+["pdflatex"] 1790799202.35301 "introduction.tex" "out/introduction.pdf" "introduction" 1790799202.94121 2
+  "c:/texlive/2026/texmf-dist/web2c/texmf.cnf" 1774904413 43630 e9fa012910491fe5ae08a72c3c2997a7 ""
+  "c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1774908887 3636411 d7698c3efcf617d10bfa3abf6f84f9b1 ""
+  "c:/texlive/2026/texmf.cnf" 1774908795 713 e69b156964470283e0530f5060668171 ""
+  "introduction.tex" 1790799193 906 16aeabf438183779b224d0eaf0e5a5e5 ""
+  "out/introduction.aux" 1790799194 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  (generated)
+  "out/introduction.aux"
+  "out/introduction.log"
+  "out/introduction.pdf"
+  (rewritten before read)

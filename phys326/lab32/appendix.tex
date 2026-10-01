@@ -1,0 +1,64 @@
+\section{Sample Calculations}
+
+Critical resistance values were calculated via
+
+$$
+\begin{aligned}
+R_{calc} &= 2 \cdot \sqrt{ \left( \frac{ L }{ C } \right)} \\&= 2 \cdot \sqrt{ \left( \frac{ \left(1.044 \pm 0.072\right) \times 10^{0} }{ \left(1.007 \pm 0.021\right) \times 10^{-5} } \right)} \\&= \qty{644(23)}{\ohm} \\
+\\
+R_{res} &= R_{calc} - R_{L} - R_{fg} \\&= \left(6.440 \pm 0.233\right) \times 10^{2} - \left(1.094 \pm 0.013\right) \times 10^{2} - \left(5.000 \pm 0.025\right) \times 10^{1} \\&= \qty{484(23)}{\ohm}  \\
+\end{aligned}
+$$
+
+The theoretical natural frequency is
+$$
+\begin{aligned}
+    f_{theo} &= \left( \frac{ 1 }{ 2 \cdot \pi } \right) \cdot \sqrt{\left(\frac{ 1 }{ L \cdot C } \right)} \\
+    &= \left( \frac{ 1 }{ 2 \cdot \pi } \right) \cdot \sqrt {\left(
+                                                                 \frac{ 1 }{ \left(1.044 \pm 0.072\right)
+                                                                 \cdot \left(1.007 \pm 0.021\right) \times 10^{-5} }
+    \right)} \\
+    &= \qty{49.09(1.77)}{\hertz}
+\end{aligned}
+$$
+
+Theoretical damped frequency is
+
+$$
+\begin{aligned}
+f_{theo} &= \left( \frac{ 1 }{ 2 \cdot \pi } \right) \cdot \sqrt { \left( \frac{ 1 }{ L \cdot C } \right) - \left( \frac{ \mathrm{R} }{ 2 \cdot L } \right) ^{ 2 } } \\&= \left( \frac{ 1 }{ 2 \cdot 3.142 \times 10 ^ {0} } \right) \cdot \sqrt { \left( \frac{ 1 }{ \left(1.044 \pm 0.072\right) \times 10^{0} \cdot \left(1.007 \pm 0.021\right) \times 10^{-5} } \right) - \left( \frac{ \left(1.794 \pm 0.013\right) \times 10^{2} }{ 2 \cdot \left(1.044 \pm 0.072\right) \times 10^{0} } \right) ^{ 2 } } \\
+&= \qty{47.14(1.59)}{\hertz}\\
+\end{aligned}
+$$
+
+Average current is calculated by
+
+$$
+\begin{aligned}
+i_{av} &= \frac{ V_{R} }{ R_{res} } \\
+&= \frac{-7.751 \times 10 ^ {-1}}{-1.144 \times 10 ^ {0}} \\
+&= \qty{-1.598e-3}{\ampere}
+\end{aligned}
+$$
+
+Theoretical $V_R$ is
+
+$$
+\begin{aligned}
+V_{R} &= \left( \frac{ \left( - V_{0} \right) }{ L } \right) \cdot t \cdot \exp \left( \left( - R \right) \cdot \frac{ t }{ 2 \cdot L } \right) \cdot R_{res} \\&= \left( \frac{ \left( - 3.860 \times 10 ^ {0} \right) }{ 1.044 \times 10 ^ {0} } \right) \cdot 6.000 \times 10 ^ {-4} \cdot \exp \left( \left( - 6.444 \times 10 ^ {2} \right) \cdot \frac{ 6.000 \times 10 ^ {-4} }{ 2 \cdot 1.044 \times 10 ^ {0} } \right) \cdot 4.850 \times 10 ^ {2} \\&= -8.940 \times 10 ^ {-1} \mathrm{V}  \\
+\end{aligned}
+$$
+
+Stored inductor energy is
+
+$$
+\begin{aligned}
+E_{L} &= 0.5 \cdot L \cdot \left( i_{av} \right) ^{ 2 }  = 0.5 \cdot 1.044 \times 10 ^ {0} \cdot \left( -2.360 \times 10 ^ {-3} \right) ^{ 2 } &= 2.907 \times 10 ^ {-6} \mathrm{J}
+\end{aligned}
+$$
+
+\section{Source code and raw data}
+
+The source code and raw data may be found it the public git repository:
+
+\url{https://github.com/trolley-lorry/phys_bsc_data.git}.

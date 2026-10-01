@@ -1,0 +1,110 @@
+%! Author = leste
+%! Date = 2026-09-14
+
+% Preamble
+\documentclass[%
+reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose,
+%preprint,
+%preprintnumbers,
+nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+floatfix,
+]{revtex4-2}
+
+% Packages
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{derivative}
+\usepackage{amsmath}
+
+
+% Recommended options for physics papers:
+\sisetup{
+  separate-uncertainty = true, % Prints as (value ± uncertainty) unit instead of value(unc) unit
+  multi-part-units = single    % Ensures units are not repeated, e.g., (1.23 ± 0.04) m instead of 1.23 m ± 0.04 m
+}
+
+
+
+
+%\usepackage[giveninits=true]{biblatex}
+%\addbibresource{references.bib}
+
+
+\newcommand{\UVic}{\affiliation{Department of Physics and Astronomy, University of Victoria, Canada}}
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+
+
+
+% Document
+\begin{document}
+
+% \preprint{APS/123-QED}
+
+\title{Experiment 32: Charge Oscillations and Energy Transfers in LRC Circuits}
+%\title{Exploring the Focusing Mechanism of the NuMI Horn Magnets}%
+
+\author{Mark Lester}\UVic
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+    This study's primary objective is to first, calculate critical values for resistance that lead to three defining
+    configurations for a damped, discharging LRC circuit: normal, critical, and oscillatory damped cases;
+    and second, demonstrate the
+    relationship
+    between
+    electric and magnetic field
+    energy exchange including losses from heat dissipation.
+    Critical resistance values of the normal, critical, oscillatory cases were \qty{1133}{\ohm}, \qty{485}{\ohm}, and \qty{20}{\ohm}, respectively.
+    Analysis on data collected by LabPro sensors and software demonstrated close agreement with the oscillatory
+    case, with an experimental damped frequency of \qty{46}{\hertz} and a theoretical damped frequency of \qty{47.1(1.6)}{\hertz}.
+    Energy analysis confirmed the continuous exchange between electric and magnetic field energy, however,
+    erroneous conserved energy plots were produced from sensitive signal triggering in the software calibration.
+    More appropriate trigger values and higher sample frequencies would
+    help mitigate this problem and produce more accurate plots of conserved energy.
+\end{abstract}
+
+
+%\keywords{Suggested keywords}%Use showkeys class option if keyword
+ %display desired
+\maketitle
+
+ %\tableofcontents
+\input{introduction}
+\input{apparatus}
+\input{procedure}
+\input{results}
+\input{discussion}
+
+\clearpage            % Flushes two-column floats and starts a fresh page
+\onecolumngrid        % Switches REVTeX to full page width
+
+\appendix
+\input{appendix}
+
+\bibliography{references}
+\bibliographystyle{apsrev4-2}
+%\bibliographystyle{plain}
+
+
+
+
+\end{document}

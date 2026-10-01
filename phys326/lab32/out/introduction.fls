@@ -1,0 +1,6 @@
+PWD C:/Users/leste/Documents/repos/phys-bsc/phys326_E_and_M/labs/lab32
+INPUT c:/texlive/2026/texmf.cnf
+INPUT c:/texlive/2026/texmf-dist/web2c/texmf.cnf
+INPUT c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT introduction.tex
+OUTPUT out/introduction.log
