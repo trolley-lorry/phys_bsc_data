@@ -1,0 +1,69 @@
+\section{Discussion}
+
+Figures~\ref{fig:normal_damp},~\ref{fig:crit_damp}, and~\ref{fig:osc_damp} show the voltage signals of the components
+agree with the theoretical predictions.
+The critically damped system discharges quicker than the normally damped configuration, and the oscillatory system
+shows the electric potential transferring between the magnetic and electric fields.
+Furthermore, the theoretical models for $V_R$ and $V_C$ align almost exactly to the recorded experimental signals.
+Small differences between the experimental and theoretical results here can be explained by the resolution of the
+evaluated time step, $\Delta t$.
+As $\Delta t$ converges to zero, the difference between the theory and experiment would decrease.
+The $V_R$ and $V_C$ signals attenuate much faster in the critically damped case.
+This is due to the current decreasing faster as a result of the reduced resistance in the circuit.
+
+However, in examining the energetics in Figures~\ref{fig:case2_energy} and~\ref{fig:case3_energy}, the conserved energy
+unexpectedly rose above the initial total energy.
+This suggests the sum of cumulative heat dissipation energy and total energy did not agree with theoretical predictions.
+Since no external energy sources existed in the circuit, the increase in energy can be explained by a few
+contributing factors.
+In the oscillatory case, the energy transfer between electric and magnetic fields decreased in magnitude over time but
+never reached
+zero during the cycle.
+In addition, the accumulated heat dissipation, $E_{HT}$, increased rapidly and unexpectedly rose higher than the
+initial energy of the system.
+This can be explained by the fact that the whole cycle was not captured from initial discharge, but indeed
+began slightly after due to the software's trigger settings.
+
+
+$E_T$ and $E_{HT}$ show to have correlated signals in both cases.
+When $E_T$ drops, $E_{HT}$ rises, and when $E_T$ begins to plateau, so does $E_{HT}$.
+This is because the total energy of the components transferred into the current through the system, thus resulting
+in joule heating.
+In Case 2, $E_{HT}$ plateaus quickly because current rapidly attenuates from critically damped discharge.
+In Case 3, $E_{HT}$ gradually plateaus because the induced current from oscillations takes longer to attenuate.
+
+Also, though a small contribution, the model does not take into account the thermal heat dissipated through the wires
+connecting the circuit, only that of the system impedance of the individual components.
+As temperatures change, so do the internal resistances of the components, further affecting the
+calculated result due to changing current flow.
+
+Analysing the frequency response of the oscillatory case, we found that the experimentally determined frequency was
+consistent with the theoretical frequency taking into account the system resistance, $R$.
+The theoretical natural frequency of the system was found to be slightly higher and just outside
+consistency margins.
+This suggests the damped frequency is slightly lower than the natural frequency of the system due to the
+contributing damping resistance, $R$.
+
+
+\section{Conclusion}
+
+From our experimental analysis, the transient response of the LRC circuit under normal, critical, and oscillatory
+damped configurations demonstrated the relationship between electric and magnetic fields during a discharge event.
+The electric potential clearly showed that energy was exchanged back and forth between the components, and the
+experimental
+signals strongly agreed with the theoretical prediction curves.
+In addition, the frequency calculations were consistent with experimental observations.
+
+The energetics plots
+demonstrated an unexpected increase in conserved energy, but this was explained by the data being captured too far
+ahead
+of the initial discharge event.
+This erroneous reduction in the initial total energy stored in the
+circuit led to a pseudo upward trend in the conserved energy.
+By adjusting the trigger settings to be more sensitive to the falling edge of the signal, a full capture of the
+discharge cycle, from fully
+charged to
+fully discharged, would
+have shown a higher initial total
+energy, and thus shown the conservative energy to gradually decrease.
+

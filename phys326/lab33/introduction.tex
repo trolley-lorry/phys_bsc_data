@@ -1,0 +1,84 @@
+\section{Introduction}
+
+Inductor, resistor, capacitor (LRC) circuits are a fundamental configuration of components that allows us to examine
+the behaviour between electricity and magnetism.
+This is because capacitors store energy in an electric field, and inductors store energy in its generated magnetic
+field from the change in current, and a discharged circuit demonstrates the energy transfer between them.
+Understanding LRC circuits is fundamental to modern electronics, and is responsible for radio
+frequency communications from integrated
+antennae in PCBs, motor drivers, and capacitive touch sensors, for example.
+
+From Kirchoff's voltage law, the primary differential equation that models the discharge behaviour is
+
+\begin{equation}\label{eq:diffyq}
+L \odv[2]{i}{t} + R \odv{i}{t} + \frac{i}{C} = 0.
+\end{equation}
+
+Where $L$, $R$, $C$, $i$ are the inductance, system resistance, capacitance, and current, respectively.
+The general solutions to this equation can be reduced to three configurations that display differing behaviour by
+selecting
+values for
+$R$:
+Normal ,
+critical, and
+oscillatory
+damping; Eqs.~\eqref{eq:norm_damp}, ~\eqref{eq:crit_damp}, and \eqref{eq:osc_damp}, respectively.
+
+\begin{equation}\label{eq:norm_damp}
+\left( \frac{R}{2 L}\right)^2 - \frac{1}{L C} > 0
+\end{equation}
+
+\begin{equation}\label{eq:crit_damp}
+\left( \frac{R}{2 L}\right)^2 - \frac{1}{L C} = 0
+\end{equation}
+
+\begin{equation}\label{eq:osc_damp}
+\left( \frac{R}{2 L}\right)^2 - \frac{1}{L C} < 0
+\end{equation}
+
+For the critically damped case, theoretical predictions can be made on the voltage signals.
+The theoretical equations for current and voltage are given by the following:
+
+\begin{equation}
+i = \frac{V_0}{L} t e^{- \frac{R}{2 L}t}.\label{eq:i_theo}
+\end{equation}
+
+\begin{equation}\label{eq:vl_theo}
+V_L = -V_0 \left(1 - \frac{R}{2 L} t\right) e^{- \frac{R}{2 L}t}.
+\end{equation}
+
+\begin{equation}\label{eq:vc_theo}
+V_C = V_0 \left(1 + \frac{2}{R C} t\right) e^{- \frac{R}{2 L}t}.
+\end{equation}
+
+$V_0$, $V_L$, $V_C$ are the values for the steady state voltage, inductor, capacitor electric potentials,
+respectively.
+For the oscillatory case, the theoretical frequency of oscillation is given by
+
+\begin{equation}\label{eq:freq}
+j \omega = \sqrt{\frac{R^2}{4 L^2} - \frac{1}{L C}}.
+\end{equation}
+
+The energetics of the system can be calculated using potential energy equations:
+
+\begin{equation}\label{eq:el}
+    E_L = \frac{1}{2} Li^2
+\end{equation}
+
+\begin{equation}\label{eq:ec}
+    E_C = \frac{1}{2} C V_C^2
+\end{equation}
+
+And the thermal heat energy dissipated is calculated using
+
+\begin{equation}\label{eq:heat}
+    E_H = \int_{t_n}^{t_{n+\Delta t}} Ri^2 \dif t \approx R i_{AV}^2 \Delta t,
+\end{equation}
+
+where $\Delta t$ is the evaluated time step between samples, and $i_{AV}$ is the average current over the time
+interval given by
+
+\begin{equation}\label{eq:i_av}
+    i_{AV} = \frac{V_R}{R_{res}}.
+\end{equation}
+
