@@ -1,84 +1,49 @@
 \section{Introduction}
 
-Inductor, resistor, capacitor (LRC) circuits are a fundamental configuration of components that allows us to examine
-the behaviour between electricity and magnetism.
-This is because capacitors store energy in an electric field, and inductors store energy in its generated magnetic
-field from the change in current, and a discharged circuit demonstrates the energy transfer between them.
-Understanding LRC circuits is fundamental to modern electronics, and is responsible for radio
-frequency communications from integrated
-antennae in PCBs, motor drivers, and capacitive touch sensors, for example.
 
-From Kirchoff's voltage law, the primary differential equation that models the discharge behaviour is
+%Presents a clear learning context and includes:
+%1) the general scientific concept with the necessary background;
+%2) primary goals and the specific scientific concept to be investigated;
+%2) specific theory, experimental design and equations needed with fully defined quantities;
+%3) any assumptions made or required;
+%4) hypothesis to be investigated;
+%5) references to supporting sources.
 
-\begin{equation}\label{eq:diffyq}
-L \odv[2]{i}{t} + R \odv{i}{t} + \frac{i}{C} = 0.
+Electromotive Response, or EMF, is responsible for the mechanical-electrical energy transfer across generators,
+motors, and transformers.
+The objective of this study is to demonstrate this exchange in the form of magnetic dipoles accelerating
+conductive coils.
+
+\begin{equation}\label{eq:faraday}
+    \epsilon_1 = -\frac{\dif \phi}{\dif t}
 \end{equation}
 
-Where $L$, $R$, $C$, $i$ are the inductance, system resistance, capacitance, and current, respectively.
-The general solutions to this equation can be reduced to three configurations that display differing behaviour by
-selecting
-values for
-$R$:
-Normal ,
-critical, and
-oscillatory
-damping; Eqs.~\eqref{eq:norm_damp}, ~\eqref{eq:crit_damp}, and \eqref{eq:osc_damp}, respectively.
+In Eq.~\eqref{eq:faraday}, Faraday's Law describes that a change in flux results in an EMF\@.
 
-\begin{equation}\label{eq:norm_damp}
-\left( \frac{R}{2 L}\right)^2 - \frac{1}{L C} > 0
+By forming the differential equation that relates flux to the magnetic field, we can show that,
+
+\begin{equation}\label{eq:flux}
+    d \phi = \frac{\mu_0 p_m}{2 \pi} \frac{z^2 - r^2 / 2}{(r^2 + z^2)^{5/2}} (2 \pi r dr)
 \end{equation}
 
-\begin{equation}\label{eq:crit_damp}
-\left( \frac{R}{2 L}\right)^2 - \frac{1}{L C} = 0
+where $d \phi$ is the flux element, $p_m$ is the magnetic dipole moment, $z$ is the axial distance away from the
+coil, $\mu_0$ is the permeability of free space, and $r$ is the radius of the loop.
+
+Further, we can derive the EMF by integrating across the time element.
+
+\begin{equation}\label{eq:emf}
+    \epsilon = -\frac{3}{2} N \mu_0 p_m r_0^2 \frac{z}{(r_0^2 + z^2)^{5/2}}v
 \end{equation}
 
-\begin{equation}\label{eq:osc_damp}
-\left( \frac{R}{2 L}\right)^2 - \frac{1}{L C} < 0
+Where $\epsilon$ is the EMF, $N$ is the number of coil turns, $r_0^2$ is the coil radius, and $v$ is the speed of
+the magnet moving through the coil.
+
+Additionally, for sufficiently large axial distances, Eq. ~\eqref{eq:Bz} applies.
+This allows us to determine the magnetic dipole moment from $B_z$ and distance measurements.
+
+\begin{equation}\label{eq:Bz}
+    B_z \approx p_m \frac{\mu_0}{2 \pi} \frac{1}{z^3}
 \end{equation}
 
-For the critically damped case, theoretical predictions can be made on the voltage signals.
-The theoretical equations for current and voltage are given by the following:
 
-\begin{equation}
-i = \frac{V_0}{L} t e^{- \frac{R}{2 L}t}.\label{eq:i_theo}
-\end{equation}
-
-\begin{equation}\label{eq:vl_theo}
-V_L = -V_0 \left(1 - \frac{R}{2 L} t\right) e^{- \frac{R}{2 L}t}.
-\end{equation}
-
-\begin{equation}\label{eq:vc_theo}
-V_C = V_0 \left(1 + \frac{2}{R C} t\right) e^{- \frac{R}{2 L}t}.
-\end{equation}
-
-$V_0$, $V_L$, $V_C$ are the values for the steady state voltage, inductor, capacitor electric potentials,
-respectively.
-For the oscillatory case, the theoretical frequency of oscillation is given by
-
-\begin{equation}\label{eq:freq}
-j \omega = \sqrt{\frac{R^2}{4 L^2} - \frac{1}{L C}}.
-\end{equation}
-
-The energetics of the system can be calculated using potential energy equations:
-
-\begin{equation}\label{eq:el}
-    E_L = \frac{1}{2} Li^2
-\end{equation}
-
-\begin{equation}\label{eq:ec}
-    E_C = \frac{1}{2} C V_C^2
-\end{equation}
-
-And the thermal heat energy dissipated is calculated using
-
-\begin{equation}\label{eq:heat}
-    E_H = \int_{t_n}^{t_{n+\Delta t}} Ri^2 \dif t \approx R i_{AV}^2 \Delta t,
-\end{equation}
-
-where $\Delta t$ is the evaluated time step between samples, and $i_{AV}$ is the average current over the time
-interval given by
-
-\begin{equation}\label{eq:i_av}
-    i_{AV} = \frac{V_R}{R_{res}}.
-\end{equation}
-
+%Ref equation: Eqs.~\eqref{eq:norm_damp}, ~\eqref{eq:crit_damp}, and \eqref{eq:osc_damp}, respectively.

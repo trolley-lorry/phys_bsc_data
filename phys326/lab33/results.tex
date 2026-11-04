@@ -1,73 +1,132 @@
-\section{Results}
+\section{Results}\label{sec:results}
+
+%Presents the results of the procedure and includes:
+%1) all data collected in tabular form if possible;
+%2) all required graphs;
+%3) all results in a logical sequence;
+%4) objective observations;
+%Note: all figures, tables and graphs required should include
+%titles, labels, units and legends where appropriate.
+
+%Present processed data, not raw data.
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\linewidth]{fig/case1_normal_damping}
-    \caption{Signals showing normal damping behaviour.}\label{fig:normal_damp}
+    \includegraphics[width=\linewidth]{figures/magnet_strength}
+    \caption{Magnetic field strength of the long and short magnets as a function of inverse cube distance. }
+    \label{fig:method1}
 \end{figure}
 
-In Figure~\ref{fig:normal_damp}, the circuit is normally damped such that the components discharge gradually over
-the cycle to zero volts without oscillating.
-The resistance value chosen here was calculated using double the critical system resistance found in Eq.~\eqref{eq:crit_damp}, which ended up being \qty{1133}{\ohm}.
+In Figure ~\ref{fig:method1}, the magnetic field strength was plotted against inverse cube distance in order to
+approximate the value of the dipole moment.
+As the dipole moment equation is only a far field approximation, the theoretical linear relationship corresponds to
+the data collected the furthest away from the magnet.
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\linewidth]{fig/case2_crit_damping}
-    \caption{Signals showing critical damping behaviour.}\label{fig:crit_damp}
-\end{figure}
-
-In Figure~\ref{fig:crit_damp}, the resistance chosen using Eq.~\eqref{eq:crit_damp} was \qty{485}{\ohm}.
-Notice the quicker time to reach zero volts compared with case 1.
-
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=\linewidth]{fig/case3_oscillatory_damping}
-    \caption{Signals showing oscillatory damping.}\label{fig:osc_damp}
-\end{figure}
-
-Figure~\ref{fig:osc_damp} shows that at selected resistance \qty{20}{\ohm}, the behaviour turned oscillatory.
-Since the resistance was much lower, more of the electric potential remained within the inductor and capacitor during
-the whole discharge cycle.
-
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=\linewidth]{fig/case2_energetics}
-    \caption{Critically damped energetics}\label{fig:case2_energy}
+    \includegraphics[width=\linewidth]{figures/short_fall}
+    \caption{EMF induced by releasing the magnetic from rest.}\label{fig:short_fall}
 \end{figure}
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\linewidth]{fig/case3_energetics}
-    \caption{Oscillatory energetics}\label{fig:case3_energy}
+    \includegraphics[width=\linewidth]{figures/long_fall}
+    \caption{EMF induced by releasing the long magnet from rest.}\label{fig:long_fall}
 \end{figure}
 
-Figures~\ref{fig:case2_energy} and~\ref{fig:case3_energy} demonstrate the energetics of the system in critically
-damped and oscillatory cases.
-In both figures, it shows that once the discharge is initiated, the stored energy transfers between the
-electric and magnetic fields of the circuit.
-As $E_T$ decreases, the accumulated dissipated thermal energy, $E_{HT}$,
-rises due
-to joule heating.
+In Figures ~\ref{fig:short_fall} and ~\ref{fig:long_fall}, the EMF is induced from the flux of the magnetic field
+lines changing with time as the magnet falls.
+The voltage peak-peak amplitude increases with each successive coil the magnet falls through.
 
-\begin{table}[htbp]
-    \caption{Oscillation Frequency}
-    \begin{tabular}{lrrl}
-        \toprule
-        {Quantity}                      & {Value}           & {Units} \\
-        \midrule
-        Experimental frequency          & 46                & Hz      \\
-        Theoretical natural frequency   & \qty{49.1(1.8)}{} & Hz      \\
-        Theoretical frequency incl. $R$ & \qty{47.1(1.6)}{} & Hz      \\
-        \bottomrule
-    \end{tabular}\label{tab:osc_freq}
+By performing a Riemann sum over the positive and negative values, we can resolve the flux through each coil.
+Table ~\ref{tab:riemann1} and ~\ref{tab:riemann2} shows the calculated result from the falling short magnet.
+Each coil has close agreement between their positive and negative phases, resulting in approximately equal and
+opposite total flux.
+
+\begin{table}[htb]
+    \caption{Calculated Flux Values - Positive Phases}
+    \centering
+\begin{tabular}{lr}
+    \toprule
+Flux Component & Quantity {[}Wb{]} \\
+    \midrule
+fluxA          & -1.117e-04        \\
+fluxB          & -1.081e-04        \\
+fluxC          & -1.133e-04        \\
+fluxD          & -1.104e-04        \\
+flux total     & -2.218e-05        \\
+    \bottomrule
+\end{tabular}\label{tab:riemann1}
 \end{table}
 
-The oscillation frequency results are listed in Table~\ref{tab:osc_freq}.
-Experimental frequency was determined by measuring the peak-peak time and dividing by the period.
-Theoretical values were calculated using Eq.~\eqref{eq:freq}.
-The theoretical natural frequency is close, but not quite consistent with the determined value, however, the
-theoretical frequency taking into account $R$ is consistent.
-This suggests the small damping resistance produces a system frequency lower than the natural frequency.
-Note: Uncertainties in values were calculated using the aid of the \textit{uncertainties} python package.
+\begin{table}[htb]
+    \caption{Calculated Flux Values - Negative Phases}
+    \centering
+\begin{tabular}{lr}
+    \toprule
+Flux Component & Quantity [Wb] \\
+    \midrule
+fluxA          & 1.106e-04        \\
+fluxB          & 1.073e-04        \\
+fluxC          & 1.126e-04        \\
+fluxD          & 1.095e-04        \\
+flux total     & 2.200e-05        \\
+    \bottomrule
+\end{tabular}\label{tab:riemann2}
+\end{table}
 
 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\linewidth]{figures/position_short}
+    \caption{Z position as a function of time.}\label{fig:position_short}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\linewidth]{figures/position_long}
+    \caption{Z position as a function of time.}\label{fig:position_long}
+\end{figure}
+
+In Figures ~\ref{fig:position_short} and ~\ref{fig:position_long}, a quadratic fit is applied to the position data
+at the points where the magnet passes through the coils.
+By extracting the value from the quadratic fit line, we determine that the acceleration due to gravity was
+$\qty{9.41}{\meter\per\second^2}$ and $\qty{9.48}{\meter\per\second^2}$ for the short and long magnets,
+respectively.
+To derive an expression for speed, $v(t)$, we take the derivative of $z(t)$:
+
+\begin{equation}
+    v(t) =
+    \begin{cases*}
+        9.41t + 3.54 & short magnet \\
+        9.48t + 3.46 & long magnet
+    \end{cases*}
+    \label{eq:velocity_cases}
+\end{equation}
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\linewidth]{figures/short_coilB}
+    \caption{Experimental and calculated EMF curve for short magnet.}\label{fig:short_coilB}
+\end{figure}
+
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\linewidth]{figures/long_coilB}
+    \caption{Experimental and calculated EMF curve for long magnet.}\label{fig:long_coilB}
+\end{figure}
+
+In Figures ~\ref{fig:short_coilB} and ~\ref{fig:long_coilB}, we compare the experimental and calculated EMF for
+coil.
+
+The calculated EMF response from the long magnet deviates more significantly compared with the short magnet.
+
+
+%\clearpage
+
+
+%\textcolor{red}{
+%    Uncertainties in experimental values were calculated using the aid of the \textit{uncertainties} python package.
+%}

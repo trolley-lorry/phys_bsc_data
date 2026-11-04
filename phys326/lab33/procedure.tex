@@ -1,51 +1,63 @@
-\section{Procedure}
+\section{Procedure}\label{sec:procedure}
 
-The experimental apparatus and procedure followed the standard method
-    outlined in the University of Victoria PHYS 326 laboratory manual~\cite{phys326}.
+%Presents the apparatus and procedure used and includes:
+%1) a list of the apparatus;
+%2) an apparatus diagram; 3) the technical details of the investigation in the procedure used to acquire data.
+%Written in the past tense with specific terminology, this should allow others to replicate the experiment.
 
-A circuit comprised of an inductor, resistor, and capacitor (LRC circuit) was assembled in series connected to a
-function generator.
-Measurements of the inductance, resistance, and capacitance were taken of each component with the digital multimeter
-before connecting the circuit.
-Table~\ref{tab:params} provides a list of measurements taken.
-Uncertainty was calculated using the digital multimeter's spec sheet, including the range's relative and per digit
-uncertainty.
+The procedure below followed the outline in the PHYS 326 course lab book ~\cite{phys326}.
 
-\begin{table}[htbp]
-\caption{Experimental Parameters}
-\begin{tabular}{lrrr}
-\toprule
-{Quantity} & {Reading} \\
-\midrule
-$R_L$, Inductor resistance & \qty{109.4(1.3)}{\ohm} \\
-L, Inductance & \qty{1.044(0.072)}{\henry} \\
-C, Capacitance & \qty{10.07(0.21)}{\micro\farad}\\
-$R_{FG}$, function generator resistance & \qty{50.00(0.25)}{\ohm} \\
-$R_{res}$, normal & \qty{1133}{\ohm} \\
-$R_{res}$, critical & \qty{485}{\ohm} \\
-$R_{res}$, oscillatory & \qty{20}{\ohm} \\
-\bottomrule
-\end{tabular}\label{tab:params}
-\end{table}
+Two methods were used to find the dipole moment of each magnet: Method 1 used a Gauss meter to measure the magnetic
+field strength
+and plotting the far-field behaviour, and method 2 used the EMF curve from dropping the magnets through successive
+coils.
 
-The function generator was configured to output a 5 Hz square wave signal to act as a continuous
-switch for the LRC circuit to quickly cycle between charge and discharge.
-The function generator offset was manually adjusted such that the ``ON'' and ``OFF'' settings were set to 3.86 V and
-0 V, respectively.
-Vernier differential probes were connected to the LabPro sensor interface and the LabPro software was calibrated to
-take voltage readings at 3000 samples per second.
+A ruler was used to measure the axial distance $z$ whilst placing the Gauss meter at regular intervals away from the
+magnet.
+$B_z$ and their corresponding distance values were recorded in a table and incremented by 5mm until the magnetic
+field strength became too weak to measure.
+This step was done for both the short and long magnets.
 
-Before each data were collected, care was taken to ensure the probes were both physically shorted and zeroed in the
-software to mitigate charge buildup that might offset the readings.
-A preliminary test case was done to adjust the maximum recording time so that the majority of the discharge cycle
-was captured without extending to the charging cycle.
-The maximum time was set to 0.09 seconds, which appeared to consistently capture the whole event.
-Resistor values were calculated to define damped, critically damped, and oscillatory behaviour for the LRC circuit.
-The critical resistance value for the damped case was set to be double that of the critically damped case to ensure
-signal behaviour between the two cases were appropriately different.
-Once the decade resistance box was set using the dials, a discharge cycle was recorded via a voltage trigger and values
-for inductor,
-resistor, and
-capacitor voltages produced.
-This was done a total of three times, completed once for each damped, critically damped, and oscillatory case.
+\begin{figure}[htb]
+        \centering
+        \includegraphics[width=\linewidth,height=0.35\textheight,keepaspectratio]{figures/measure}
+        \caption{Method 1: The magnet was placed along the ruler. $B_z$ and corresponding distance measurements were taken.}
+        \label{fig:meas}
+    \end{figure}
 
+The slope of the line where it was approximately linear was used to derive the magnetic dipole moment using Eq. ~\eqref{eq:Bz}.
+
+As for method 2, a magnet was carefully attached to the top of the string and left to fall (with North polarity
+facing down) from rest.
+With the coils hooked up to dual input amplifiers, this resulted in EMF which was sampled by the LabPro sensor
+hardware.
+This data was recorded in LabPro at the highest sampling rate available, and EMF curves for each coil were plotted
+against time.
+The EMF curves were de-amplified by the gain rating used to reflect the actual response.
+This was repeated for both the short and long magnets.
+
+\clearpage
+
+
+%The experimental apparatus and procedure followed the standard method outlined in the University of Victoria PHYS 326 laboratory manual~\cite{phys326}.
+
+%Table~\ref{tab:params} provides a list of measurements taken.
+%Uncertainty was calculated using...
+
+
+%\begin{table}[htbp]
+%\caption{Experimental Parameters}
+%\begin{tabular}{lrrr}
+%\toprule
+%{Quantity} & {Reading} \\
+%\midrule
+%$R_L$, Inductor resistance & \qty{109.4(1.3)}{\ohm} \\
+%L, Inductance & \qty{1.044(0.072)}{\henry} \\
+%C, Capacitance & \qty{10.07(0.21)}{\micro\farad}\\
+%$R_{FG}$, function generator resistance & \qty{50.00(0.25)}{\ohm} \\
+%$R_{res}$, normal & \qty{1133}{\ohm} \\
+%$R_{res}$, critical & \qty{485}{\ohm} \\
+%$R_{res}$, oscillatory & \qty{20}{\ohm} \\
+%\bottomrule
+%\end{tabular}\label{tab:params}
+%\end{table}
