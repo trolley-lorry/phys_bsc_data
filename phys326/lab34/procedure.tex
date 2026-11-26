@@ -1,0 +1,53 @@
+\section{Procedure}\label{sec:procedure}
+
+
+%Presents the apparatus and procedure used and includes:
+%1) a list of the apparatus;
+%2) an apparatus diagram; 3) the technical details of the investigation in the procedure used to acquire data.
+%Written in the past tense with specific terminology, this should allow others to replicate the experiment.
+
+
+The experimental apparatus and procedure followed the standard method outlined in the University of Victoria PHYS 326
+laboratory manual~\cite{phys326}.
+
+Before any data was collected, the diameter of the toroid was measured using a 30cm ruler.
+The diameter was determined from measuring the middle-middle of the shape in order to derive the total length, $L$.
+The Hall sensor, which measures the magnetic field intensity, was positioned between the gap of the toroid seen in
+Figure~\ref{fig:toroid}, and angled perpendicular to the incoming field lines.
+
+The LoggerPro software was then sut up to measure the voltage across the coil as well as manual entries from the
+Gaussmeter.
+The Gaussmeter measurements were converted to units of Teslas.
+
+A calculated column was used to determine $H$ using Eq.~\eqref{eq:H}.
+A technique was employed in an attempt to demagnetise the metal sample.
+First, the coil was energised up to 2.0 Amps to substantially polarise the material, then switched to a reverse
+current of the same magnitude using the commutator switch to reverse the polarity.
+This was repeated in 0.1 Amp increments all the way down to zero amps.
+After four attempts of this technique, the lowest reading from the Gaussmeter was 11.3 G.
+
+Starting from zero Amps, the data was collected in small intervals by entering in the digital voltage and Gaussmeter
+readings into LoggerPro.
+Once a maximum current of 2.0 Amps was reached, data was taken as current was reduced incrementally back down to zero.
+At that point, the commutator switch was flipped to reverse the direction of current, and the process was repeated
+to capture more data points to a maximum of 2.0 Amps.
+Current was again reduced to zero where the data approximately closed the hysteresis curve.
+
+\begin{table}[htbp]
+    \caption{Experimental Parameters}
+    \begin{tabular}{lrrr}
+        \toprule
+        {Quantity}           & {Reading}                \\
+        \midrule
+        $r$, Toroid radius   & \qty{82(5)}{\milli\meter} \\
+        $N$, Number of turns & 1000                     \\
+        $R$, Coil resistance & \qty{3.488(0.010)}{\ohm} \\
+        \bottomrule
+    \end{tabular}\label{tab:params}
+\end{table}
+
+Table~\ref{tab:params} provides a list of measurements taken.
+
+The measurement uncertainty of $\pm 5$ millimeters was used to account for the uneven shape of the electrical tape
+around the toroid and the ruler millimeter graduations.
+The measurement uncertainty of resistance is taken from the DMM's spec sheet.

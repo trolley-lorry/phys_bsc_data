@@ -1,0 +1,105 @@
+%! Author = lester
+%! Date = 2026-09-14
+
+% Preamble
+\documentclass[%
+ reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose,
+%preprint,
+%preprintnumbers,
+nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+floatfix,
+]{revtex4-2}
+
+% Packages
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{derivative}
+\usepackage{amsmath}
+
+%\usepackage[giveninits=true]{biblatex}
+%\addbibresource{references.bib}
+
+% Recommended options for physics papers:
+\sisetup{
+  separate-uncertainty = true, % Prints as (value ± uncertainty) unit instead of value(unc) unit
+  multi-part-units = single    % Ensures units are not repeated, e.g., (1.23 ± 0.04) m instead of 1.23 m ± 0.04 m
+}
+
+
+\newcommand{\UVic}{\affiliation{Department of Physics and Astronomy, University of Victoria, Canada}}
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+
+% Document
+\begin{document}
+
+% \preprint{APS/123-QED}
+
+%\title{ \textcolor{red}{Fancy Science Paper}}
+\title{Ferromagnetism}%
+
+\author{Mark Lester}\UVic
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+
+%Presents the major aspects of the investigation and includes:
+%1) the overall purpose of the lab;
+%2) the basic design of the
+%investigation;
+%3) major findings or trends found;
+%4) a summary of interpretations and conclusions.
+
+    Ferromagnetic materials such as steel produce hysteresis curves when magnetised by an external magnetic field.
+    This experiment aims to study the hysteresis effect by driving current through a steel toroid and plotting its
+    magnetic response.
+    Our results show that driving current up and down from a maximum of 2.0 Amps exhibited a closed loop hysteresis
+    curve, where the integrated area was \qty{439.8}{\tesla\ampere\per\meter}.
+    This quantity represented the work done per unit volume by the current.
+    Despite residual magnetic field effects, the plot demonstrated a magnetic response which aligned with the
+    ferromagnetic theory.
+\end{abstract}
+
+
+%\keywords{Suggested keywords}%Use showkeys class option if keyword
+ %display desired
+\maketitle
+
+ %\tableofcontents
+\input{introduction}
+\input{apparatus}
+\input{procedure}
+\input{results}
+\input{discussion}
+
+\clearpage            % Flushes two-column floats and starts a fresh page
+\onecolumngrid        % Switches REVTeX to full page width
+
+\appendix
+\input{appendix}
+
+\bibliography{references}
+\bibliographystyle{apsrev4-2}
+%\bibliographystyle{plain}
+
+
+
+\end{document}
